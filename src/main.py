@@ -1,26 +1,32 @@
 from python_aternos import Client
 from dotenv import load_dotenv
 from os import getenv
+import discord
+from discord.ext import commands
 
+# Load environment variables from .env file
 atclient = Client()
 load_dotenv("./src/.env")
 
-# Log in
+# Log in - Aternos
 atclient.login(getenv("USERNAME"), getenv("PASSWORD"))
 aternos = atclient.account
-
 servers = aternos.list_servers()
 
-print(servers[0].status)
-
-class DiscordBot(discord.Client):
-  async def on_ready(self):
-    print(f'Logged on as {self.user}!')
-
-  async def on_message(self, message):
-    print(f'Message from {message.author}: {message.content}')
-
+# Log in - Discord
 intents = discord.Intents.default()
 intents.message_content = True
-client = DiscordBot(intents=intents)
-client.run(getenv("DISCORD_TOKEN"))
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+# Commands - Discord
+@bot.command()
+async def status(ctx):
+  await ctx.send(servers[0].status)
+
+@bot.command()
+async def start(ctx):
+  servers[0].start()
+  await ctx.send("Server started...\nPlease wait for a few minutes.")
+
+# Start the bot
+bot.run(getenv("DISCORD_TOKEN"))
