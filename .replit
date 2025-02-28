@@ -1,0 +1,12 @@
+entrypoint = "src/main.py"
+modules = ["python-base-3.11"]
+
+[nix]
+channel = "stable-24_05"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[deployment]
+run = { args = ["python", "src/main.py"] }
+deploymentTarget = "cloudrun"
