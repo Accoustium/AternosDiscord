@@ -6,8 +6,8 @@ authors = ["Accoustium"]
 
 [tool.poetry.dependencies]
 python = ">=3.11.0,<3.12"
-discord = "^1.7.3"
-py-aternos = "^1.4.0"
+discord = "^2.3.2"
+py-aternos = "^3.0.74"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"

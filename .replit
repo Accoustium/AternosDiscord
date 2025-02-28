@@ -1,4 +1,5 @@
 entrypoint = "src/main.py"
+run = "poetry run python src/main.py"
 modules = ["python-base-3.11"]
 
 [nix]
@@ -8,5 +9,5 @@ channel = "stable-24_05"
 requiredFiles = [".replit", "replit.nix"]
 
 [deployment]
-run = { args = ["python", "src/main.py"] }
+run = { args = ["poetry", "run", "python", "src/main.py"] }
 deploymentTarget = "cloudrun"
