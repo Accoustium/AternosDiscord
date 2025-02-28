@@ -8,6 +8,7 @@ authors = ["Accoustium"]
 python = ">=3.11.0,<3.12"
 discord = "^2.3.2"
 py-aternos = "^3.0.74"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
