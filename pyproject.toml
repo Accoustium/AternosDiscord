@@ -1,5 +1,5 @@
 [project]
-name = "aternosbot"
+name = "AternosDiscord"
 dynamic = ["version"]
 description = "Create a Discord Bot to manage Aternos Servers"
 readme = "README.md"
@@ -9,10 +9,10 @@ authors = [
 ]
 
 [project.scripts]
-aternos-discord-bot = "aternos_discord_bot.__main__:main"
+aternos-discord-bot = "AternosDiscord.__main__:main"
 
 [tool.poetry]
-version = "1.1.0"
+version = "1.1.1"
 requires-poetry = ">=2.0"
 
 [tool.poetry.dependencies]

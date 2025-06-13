@@ -45,10 +45,12 @@ Running the Code
 To start the Bot, you will just need to navigate inside the `AternosDiscord` folder and run the following command:
 ### Windows
 ```bash
-python -m poetry run src/main.py
+python -m pip install -e .
+python -m AternosDiscord
 ```
 
 ### Linux/Mac
 ```bash
-python3 -m poetry run src/main.py
+python -m pip install -e .
+python3 -m AternosDiscord
 ```
