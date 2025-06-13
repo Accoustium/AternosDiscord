@@ -21,7 +21,7 @@ class DiscordBot(commands.Bot):
         await ctx.send(f"Available servers:\n{server_list}")
 
 
-    async def status(self, ctx, server_number: int):
+    async def server_status(self, ctx, server_number: int):
         server = self.server.get_server(int(server_number))
         if server:
             await ctx.send(f"Status of {server.address}: {server.status}")
@@ -29,6 +29,6 @@ class DiscordBot(commands.Bot):
             await ctx.send(f"Server '{server_number}' not found.")
 
 
-    async def start(self, ctx, server_number: int):
+    async def server_start(self, ctx, server_number: int):
         self.server.start_server(int(server_number))
         await ctx.send("Server started...\nPlease wait for a few minutes.")
