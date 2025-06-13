@@ -1,8 +1,19 @@
-[tool.poetry]
-name = "aternos-discord-bot"
-version = "1.1.0"
+[project]
+name = "aternosbot"
+dynamic = ["version"]
 description = "Create a Discord Bot to manage Aternos Servers"
-authors = ["Accoustium"]
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Accoustium", email = "accoustium@gmail.com" }
+]
+
+[project.scripts]
+aternos-discord-bot = "aternos_discord_bot.__main__:main"
+
+[tool.poetry]
+version = "1.1.0"
+requires-poetry = ">=2.0"
 
 [tool.poetry.dependencies]
 python = ">=3.11.0,<3.12"
@@ -12,6 +23,7 @@ python-dotenv = "^1.0.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.2.5"
+setuptools = { version = ">=60", python = "<3.10" }
 
 [tool.pyright]
 useLibraryCodeForTypes = true
@@ -22,5 +34,5 @@ select = ['E', 'W', 'F', 'I', 'B', 'C3', 'ARG', 'SIM']
 ignore = ['W291', 'W292', 'W293']
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=2.0"]
 build-backend = "poetry.core.masonry.api"

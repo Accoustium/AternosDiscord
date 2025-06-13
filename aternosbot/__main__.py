@@ -1,6 +1,6 @@
 import dotenv
-from aternos_bot import Aternos
-from discord_bot import DiscordBot
+from .aternos_bot import Aternos
+from .discord_bot import DiscordBot
 import os
 from string import Template
 
