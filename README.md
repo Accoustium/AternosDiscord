@@ -12,7 +12,7 @@ Getting the code is as simple as using Git.  You must use the clone command in t
 
 Discord Setup
 ---
-
+[Discord Bot Setup](https://discord.com/developers/docs/quick-start/getting-started)
 
 Python Setup
 ---
